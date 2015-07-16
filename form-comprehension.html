@@ -1,0 +1,100 @@
+<div class="text-center">
+    <span class="glyphicon glyphicon-heart"></span>
+    <h4>Let's do a quick and simple test of your understanding of this study.</h4>
+</div>
+
+<br></br>
+<hr></hr>
+<label>What is the purpose of this study?</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.comprehension_1" value="correct">
+           Understanding the fluctuations of Parkinson disease symptoms
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.comprehension_1" value="incorrect">
+            Treating Parkinson disease
+        </label>
+    </div>
+</div>
+
+
+<label>My name will be stored with my study data</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.comprehension_2" value="incorrect">
+           Yes
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.comprehension_2" value="correct">
+            No
+        </label>
+    </div>
+</div>
+
+<label>I can choose to share my coded study data sparsely or more broadly</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.comprehension_3" value="correct">
+           Yes
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.comprehension_3" value="incorrect">
+            No
+        </label>
+    </div>
+</div>
+
+
+<label>I will be able to skip any survey question</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.comprehension_4" value="correct">
+           Yes
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.comprehension_4" value="incorrect">
+            No
+        </label>
+    </div>
+</div>
+
+<label>I will be able to stop participating at any time</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.comprehension_5" value="correct">
+           Yes
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.comprehension_5" value="incorrect">
+            No
+        </label>
+    </div>
+</div>
+
+
+
+<div class="form-group row">
+
+    <div class="col-xs-6 col-xs-offset-3">
+        <a ng-click="checkComprehension()" class="btn btn-block btn-info">
+        Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+    
+</div>

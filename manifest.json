@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Study Consent Form",
+  "short_name": "Study Consent Form",
+  "description": "Study Consent Form",
+  "version": "0.1.1",
+  "minimum_chrome_version": "38",
+  "app": {
+         "urls": ["http://batea.docgraph.org",
+                  "http://consent.npi.io"],
+         "launch": { "web_url": "http://consent.npi.io"}
+         }, 
+   "default_locale": "en"
+}
