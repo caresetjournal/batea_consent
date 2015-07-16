@@ -1,8 +1,108 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+     <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+     <img src="http://placehold.it/1900x1080&text=Batea" alt="Batea">
+   
+                <div class="carousel-caption">
+                    <h2>The clinical bookmarks project makes searching for medical information more accurate.
+                    <a href=""> Learn More</a>
+                    </h2>
+                </div>
+    </div>
+
+    <div class="item">
+     <img src="http://placehold.it/1900x1080&text=About" alt="About">
+   
+                <div class="carousel-caption">
+                    <h2>A written summary.
+                    <a href=""> Learn More</a>
+                    </h2>
+                </div>
+    </div>
+
+    <div class="item">
+           <img src="http://placehold.it/1900x1080&text=Video" alt="Video">
+   
+                <div class="carousel-caption">
+                    <h2>Watch this video
+                    <a target="_blank" href="https://vimeo.com/76684699"> Watch it now</a>
+                    </h2>
+                </div>
+    </div>
+
+    <div class="item">
+      <img src="http://placehold.it/1900x1080&text=Help" alt="Help">
+   
+                <div class="carousel-caption">
+                    <h2>Help this study
+                    <a href=""> Learn More</a>
+                    </h2>
+                </div>
+    </div>
+    
+     <div class="item">
+     <img src="http://placehold.it/1900x1080&text=Who" alt="Who">
+   
+                <div class="carousel-caption">
+                    <h2>Fred Trotter is running the study and the IRB contact 
+                    s John Doe at Research University. 
+                    <a href=""> Learn More</a>
+                    </h2>
+                </div>
+    </div>
+     
+    <div class="item">
+     <img src="http://placehold.it/1900x1080&text=Join" alt="Join">
+   
+                <div class="carousel-caption">
+                    <h2>Are you in? 
+                    
+                    </h2>
+                    <a ui-sref="form.eligibility">
+        <button type="submit" class="btn btn-danger">Join Study</button>
+    </a>
+                    
+                </div>
+    </div> 
+     
+     
+    
+    
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<hr>
+
 <div class="text-center">
-    <span class="glyphicon glyphicon-heart"></span>
-    <h3>About</h3>
-    <h4>This is what the study is all about. </h4>
     <a ui-sref="form.eligibility">
         <button type="submit" class="btn btn-danger">Join Study</button>
     </a>
 </div>
+
+
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>

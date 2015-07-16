@@ -110,7 +110,14 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     // Create a randowm number
     var random =  Math.floor((Math.random() * 9000000000) + 1000000000);
     // we will store all of our form data in this object
-    $scope.formData = {"random_id": random};
+    console.log($scope.formData);
+    if (!$scope.formData) {
+        //code
+        console.log("$scope.formData undefined");
+        
+        $scope.formData = {"random_id": random};
+    }
+    
     
     // function to process the form
     $scope.processForm = function() {
