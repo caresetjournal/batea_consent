@@ -29,6 +29,37 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             templateUrl: 'form-profile.html'
         })
         
+        
+        
+        .state('form.finalize', {
+            url: '/finalize',
+            templateUrl: 'form-finalize.html'
+        })
+        
+        
+        .state('form.ifdoctor', {
+            url: '/ifdoctor',
+            templateUrl: 'form-ifdoctor.html'
+        })
+        
+ 
+        .state('form.ifmedstudent', {
+            url: '/ifmedstudent',
+            templateUrl: 'form-ifmedstudent.html'
+        })
+        
+        
+        .state('form.ifresident', {
+            url: '/ifresident',
+            templateUrl: 'form-ifresident.html'
+        })
+        
+        .state('form.ifpatientcaregiver', {
+            url: '/ifpatientcaregiver',
+            templateUrl: 'form-ifpatientcaregiver.html'
+        })
+        
+        
         .state('ineligible', {
             url: '/ineligible',
             templateUrl: 'ineligible.html'
@@ -68,31 +99,18 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             templateUrl: 'form-joinstudy.html'
         })
         
-        // url will be /form/check-eligibility
-        .state('checkeligibility', {
-            url: '/check-eligibility',
-            controller: 'eligibilitycheckController'
-        })
         
         
         // url will be /consent
         .state('form.consent', {
             url: '/consent',
             templateUrl: 'consent.html'
-        })
-        
-        // url will be /form/payment
-        .state('form.payment', {
-            url: '/payment',
-            templateUrl: 'form-payment.html'
         });
        
     // catch all route
     // send users to the form page 
     $urlRouterProvider.otherwise('/about');
 })
-
-
 
 
 .run(function ($rootScope, $state, $stateParams) {
@@ -121,18 +139,15 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     // function to process the form
     $scope.processForm = function() {
-        
         console.log($scope.formData);
         alert('POST form contents to webservice');
-        
     };
     
-    
-    // function to process the form
+
     $scope.checkEligibility = function() {
-        if ($scope.formData.english_comfort === "yes" &&
-            $scope.formData.at_least_18 === "yes" &&
-             $scope.formData.us_citizen === "yes"
+        if (// $scope.formData.english_comfort === "yes" &&
+            $scope.formData.at_least_13 === "yes" //&&
+             // $scope.formData.us_citizen === "yes"
             ) {
             $scope.$state.go("form.consent");
         } else {
@@ -140,8 +155,23 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         }
     };
     
+
+    $scope.checkParticipantType = function() {
+        if ($scope.formData.participant_type === "doctor"){
+            $scope.$state.go("form.ifdoctor")
+        } else if ($scope.formData.participant_type === "resident"){
+            $scope.$state.go("form.ifresident");
+        } else if ($scope.formData.participant_type === "patient-caregiver"){
+            $scope.$state.go("form.ifpatientcaregiver");
+        }else if ($scope.formData.participant_type === "medical_student"){
+            $scope.$state.go("form.ifmedstudent");
+        } else {
+            $scope.$state.go("form.joinstudy");
+        }
+    };    
     
-    // function to process the form
+    
+
     $scope.checkComprehension = function() {
         if ($scope.formData.comprehension_1 === "correct" &&
             $scope.formData.comprehension_2 === "correct" &&
