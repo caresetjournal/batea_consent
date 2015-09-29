@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar, .footer-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+}
+
+.navbar li {
+    list-style-type: none;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.navbar li a:hover {
+    cursor: pointer;
+}
+
+.footer-nav {
+    width: 60%;
+    margin: 10px auto;
+}
+
+.footer-nav li {
+    list-style-type: none;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.footer-nav li a:hover {
+    cursor: pointer;
+}
