@@ -6,28 +6,26 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.1.1/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
-    
+
     <!-- JS -->
-    
-    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+
     <!-- load angular, nganimate, and ui-router -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
-    <script src="app.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/form.controller.js"></script>
+    <script src="app/intro.controller.js"></script>
+    <script src="app/risk.controller.js"></script>
+    <script src="app/form.factory.js"></script>
+
 </head>
 <body ng-app="formApp">
-
-<!-- views will be injected here -->
-<div class="container">
-    <div ui-view></div>
-</div>
-
-
+    <div ui-view class="container"></div>
 </body>
 
 
