@@ -20,7 +20,6 @@
         activate();
 
         function activate() {
-            console.log($state);
             // Create a randowm number
             var random = Math.floor((Math.random() * 9000000000) + 1000000000);
             // we will store all of our form data in this object

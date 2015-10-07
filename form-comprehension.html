@@ -9,13 +9,13 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.comprehension_1" value="correct">
+           <input type="radio" ng-model="formCtrl.formData.comprehension_1" value="correct">
            Understanding how clinicians search for medical information online
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.comprehension_1" value="incorrect">
+            <input type="radio" ng-model="formCtrl.formData.comprehension_1" value="incorrect">
             Tracking clinicians personal preferences
         </label>
     </div>
@@ -26,13 +26,13 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.comprehension_2" value="incorrect">
+           <input type="radio" ng-model="formCtrl.formData.comprehension_2" value="incorrect">
            Yes
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.comprehension_2" value="correct">
+            <input type="radio" ng-model="formCtrl.formData.comprehension_2" value="correct">
             No
         </label>
     </div>
@@ -42,13 +42,13 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.comprehension_3" value="correct">
+           <input type="radio" ng-model="formCtrl.formData.comprehension_3" value="correct">
            Yes
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.comprehension_3" value="incorrect">
+            <input type="radio" ng-model="formCtrl.formData.comprehension_3" value="incorrect">
             No
         </label>
     </div>
@@ -59,13 +59,13 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.comprehension_4" value="correct">
+           <input type="radio" ng-model="formCtrl.formData.comprehension_4" value="correct">
            Yes
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.comprehension_4" value="incorrect">
+            <input type="radio" ng-model="formCtrl.formData.comprehension_4" value="incorrect">
             No
         </label>
     </div>
@@ -75,13 +75,13 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.comprehension_5" value="correct">
+           <input type="radio" ng-model="formCtrl.formData.comprehension_5" value="correct">
            Yes
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.comprehension_5" value="incorrect">
+            <input type="radio" ng-model="formCtrl.formData.comprehension_5" value="incorrect">
             No
         </label>
     </div>
@@ -92,9 +92,9 @@
 <div class="form-group row">
 
     <div class="col-xs-6 col-xs-offset-3">
-        <a ng-click="checkComprehension()" class="btn btn-block btn-info">
+        <a ng-click="formCtrl.checkComprehension()" class="btn btn-block btn-info">
         Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
     </div>
-    
+
 </div>
