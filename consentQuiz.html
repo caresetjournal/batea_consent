@@ -1,0 +1,88 @@
+<div>
+    <div class="main">
+        <div class="content">
+            <form ng-submit="consentCtrl.checkQuiz()">
+                <label>
+                    How much of your browser history will you be contributing?
+                </label>
+                <input type="radio" ng-model="consentCtrl.browserHistory" value="all">
+                All of my browsing history
+                <input type="radio" ng-model="consentCtrl.browserHistory" value="part">
+                Part of my browsing history, based on which sites I visit
+                <input type="radio" ng-model="consentCtrl.browserHistory" value="none">
+                None of my browsing history
+
+                <label>
+                    How can I know when Batea is contributing my browsing
+                    patterns?
+                </label>
+                <input type="radio" ng-model="consentCtrl.browserPatterns" value="green">
+                Batea is recording when the icon is green, but not when it's red or blank
+                <input type="radio" ng-model="consentCtrl.browserPatterns" value="blink">
+                Batea is recording when the icon is blinking
+                <input type="radio" ng-model="consentCtrl.browserPatterns" value="red">
+                Batea is recording when the icon is red
+
+                <label>
+                    Is it possible that my identity will be released along with my data?
+                </label>
+                <input type="radio" ng-model="consentCtrl.identity" value="attempt">
+                Batea will attempt to separate my identity from my data, but this
+                process cannot be made perfect and it is possible that my identity
+                could be merged back with my data accidentally
+                <input type="radio" ng-model="consentCtrl.identity" value="impossibl">
+                Batea will release my data in such a way that it is impossible
+                to reunite with my identity
+                <input type="radio" ng-model="consentCtrl.identity" value="will">
+                Batea will release my identity with my data
+
+                <label>
+                    What will happen to my data once I contribute it to the Batea project?
+                </label>
+                <input type="radio" ng-model="consentCtrl.happen" value="1">
+                It will be shared only with select universities
+                <input type="radio" ng-model="consentCtrl.happen" value="2">
+                De-identified versions of the data will be shared publicly,
+                and identified versions may only be shared with other researchers
+                under non-disclosure agreements
+                <input type="radio" ng-model="consentCtrl.happen" value="3">
+                The data will be kept secure on the servers and not shared with anyone
+
+                <label>
+                    How do I prevent Batea from recording my current browsins session?
+                </label>
+                <input type="radio" ng-model="consentCtrl.session" value="1">
+                Batea's recording status can be changed by clicking its icon
+                <input type="radio" ng-model="consentCtrl.session" value="2">
+                Batea's recording status can be changed in extension settings
+                <input type="radio" ng-model="consentCtrl.session" value="3">
+                Batea's recording status cannot be changed
+
+                <label>
+                What can I do when Batea presents me with a popup survey that
+                I do not want to answer?
+                </label>
+                <input type="radio" ng-model="consentCtrl.survey" value="1">
+                I can skip that survey and also disable future surveys in
+                Batea extension settings
+                <input type="radio" ng-model="consentCtrl.survey" value="2">
+                I must complete all surveys to be included in the study
+                <input type="radio" ng-model="consentCtrl.survey" value="3">
+                I can postpone filling out the survey
+
+                <label>
+                If I choose to withdraw consent
+                </label>
+                <input type="radio" ng-model="consentCtrl.withdraw" value="1">
+                Batea will remove my data from their servers, but cannot
+                get third parties to remove the data from what they have downloaded
+                <input type="radio" ng-model="consentCtrl.withdraw" value="2">
+                Batea will be able to remove all data that I have donated it
+                from the Internet forever
+                <input type="radio" ng-model="consentCtrl.withdraw" value="3">
+                Batea will remove my identity, but keep my data
+            </form>
+        </div>
+    </div>
+    <button>Submit</button>
+</div>

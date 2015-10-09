@@ -11,11 +11,55 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         // route to show our basic form (/form)
         .state('form', {
+<<<<<<< HEAD
+            url: '/',
+            templateUrl: 'layout.html',
+            controller: 'formController as formCtrl'
+        })
+
+        .state('form.process', {
+            url: '^/process',
+            templateUrl: 'process.html'
+        })
+
+        .state('form.deidentify', {
+            url: '^/de-identification',
+            templateUrl: 'deidentify.html'
+        })
+
+        .state('form.data', {
+            url: '^/data',
+            templateUrl: 'data.html'
+        })
+
+        .state('form.impact', {
+            url: '^/impact',
+            templateUrl: 'impact.html'
+        })
+
+        .state('form.risks', {
+            url: '^/risks-benefits',
+            templateUrl: 'risks-benefits.html',
+            controller: 'riskController as riskCtrl'
+        })
+
+        .state('form.withdrawal', {
+            url: '^/withdrawal',
+            templateUrl: 'withdrawal.html'
+        })
+
+        .state('form.consent', {
+            url: '^/consent',
+            templateUrl: 'consent.html'
+        })
+
+=======
             url: '/form',
             templateUrl: 'form.html',
             controller: 'formController as formCtrl'
         })
 
+>>>>>>> d016c443f65c8e41b4b927156e4e89cda22baba5
         // nested states
         // each of these sections will have their own view
         // url will be nested (/form/profile)
@@ -72,9 +116,10 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         })
 
 
-        .state('about', {
-            url: '/about',
-            templateUrl: 'about.html'
+        .state('form.intro', {
+            url: '^/intro',
+            templateUrl: 'intro.html',
+            controller: 'introController as introCtrl'
         })
 
 
@@ -97,17 +142,17 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         .state('form.joinstudy', {
             url: '/join-study',
             templateUrl: 'form-joinstudy.html'
-        })
-
-
-
-        // url will be /consent
-        .state('form.consent', {
-            url: '/consent',
-            templateUrl: 'consent.html'
         });
+
+
+
+        // // url will be /consent
+        // .state('form.consent', {
+        //     url: '/consent',
+        //     templateUrl: 'consent.html'
+        // });
 
     // catch all route
     // send users to the form page
-    $urlRouterProvider.otherwise('/about');
+    $urlRouterProvider.otherwise('/intro');
 });

@@ -1,0 +1,93 @@
+<div ng-if="introCtrl.begin">
+    <h1>Thank you for your interest in becoming a Batea Scholar</h1>
+    <div class="main">
+        <div class="content">
+            <p>
+                Batea is a Chrome Extension that allows you to donate
+                specific de-identified portions of your browser history
+                to the public in order to help make medical Wikipedia
+                articles better.
+            </p>
+            <p>
+                This project has a specific focus on improving clinical
+                content on Wikipedia. We especially seek medical students
+                to help us, but we also invite doctors, nursers,
+                patients, and the general public to join as well!
+            </p>
+            <p>
+                Batea (which is named for a gold-panning tool) works by
+                detecting when you visit certain pages (clinical Wikipedia
+                pages or other clinical-related websites). This triggers
+                the contribution of the browser history before, and after
+                these page visits, to the Batea main server. This includes
+                the original search page you visited and the search term
+                you were using.
+            </p>
+            <p>
+                The Batea server will de-identify this history (so that
+                your identity is not associated with the data) and then
+                release this data publicly in order for researchers and
+                Wikipedians to use the data to improve the content
+                quality on Wikipedia.
+            </p>
+            <p>
+                Batea researchers may share identified data, but only
+                with other researchers or research institutions (such
+                as universities) under appropriate non-disclosure
+                agreements.
+            </p>
+        </div>
+        <div class="video-container">
+            <video src="#"></video>
+        </div>
+    </div>
+    <div class="btn-container">
+        <button class="begin-btn" ng-click="introCtrl.beginProcess()">
+            Begin the consent process to become a Scholar
+        </button>
+    </div>
+</div>
+
+<div ng-if="introCtrl.showEligibility">
+    <div class="main">
+        <div class="content">
+            <p>
+                Batea is a clinical browser history research project.
+            </p>
+            <p>
+                Anyone can contribute data anonymously, but only users
+                who are over the age of 18 and speak English are allowed
+                to participate as Scholars and associate their identities
+                with their data contributions
+            </p>
+
+            <div>
+                <label>How old are you?</label>
+                <input type="radio" ng-model="introCtrl.form.formData.atLeast18" ng-value="introCtrl.formFalse">
+                I am under 18 years old
+                <input type="radio" ng-model="introCtrl.form.formData.atLeast18" ng-value="introCtrl.formTrue">
+                I am over 18 years old
+            </div>
+
+            <div>
+                <label>Do you speak English?</label>
+                <input type="radio" ng-model="introCtrl.form.formData.english" ng-value="introCtrl.formFalse">
+                I do not speak English
+                <input type="radio" ng-model="introCtrl.form.formData.english" ng-value="introCtrl.formTrue">
+                I speak English
+            </div>
+        </div>
+    </div>
+    <input type="submit" ng-click="introCtrl.checkEligibility()">
+</div>
+
+<div ng-if="introCtrl.showNotEligible">
+    <div class="main">
+        <div class="content">
+            <p>
+                You must be over the age of 18 and speak English to
+                be an identified participant in this study.
+            </p>
+        </div>
+    </div>
+</div>
