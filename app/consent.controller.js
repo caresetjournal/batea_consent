@@ -9,8 +9,20 @@
     function consentController($state) {
         var vm = this;
 
-        vm.checkQuiz = checkQuiz;
-        vm.showQuiz  = true;
+        vm.checkQuiz         = checkQuiz;
+        vm.currentYear       = parseInt(2015, 10) || new Date().getFullYear(),
+        vm.oldestYear        = vm.currentYear - 100,
+        vm.showQuiz          = true;
+        vm.submitConsentForm = submitConsentForm;
+        vm.years             = [];
+
+        activate();
+
+        function activate() {
+            for (var i = vm.currentYear; i >= vm.oldestYear; i--) {
+              vm.years.push(i);
+            }
+        }
 
         function checkQuiz() {
             var correctCount = 0;
@@ -46,6 +58,10 @@
                 vm.showQuiz = false;
                 vm.showConsentForm = true;
             }
+        }
+
+        function submitConsentForm() {
+
         }
     }
 })();
