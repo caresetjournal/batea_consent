@@ -11,7 +11,6 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         // route to show our basic form (/form)
         .state('form', {
-<<<<<<< HEAD
             url: '/',
             templateUrl: 'layout.html',
             controller: 'formController as formCtrl'
@@ -50,16 +49,15 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         .state('form.consent', {
             url: '^/consent',
-            templateUrl: 'consent.html'
+            templateUrl: 'consent.html',
+            controller: 'consentController as consentCtrl'
         })
 
-=======
-            url: '/form',
-            templateUrl: 'form.html',
-            controller: 'formController as formCtrl'
-        })
+        //     url: '/form',
+        //     templateUrl: 'form.html',
+        //     controller: 'formController as formCtrl'
+        // })
 
->>>>>>> d016c443f65c8e41b4b927156e4e89cda22baba5
         // nested states
         // each of these sections will have their own view
         // url will be nested (/form/profile)
