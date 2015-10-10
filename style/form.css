@@ -55,10 +55,12 @@ body {
 
 .top-nav li a {
     color: #000;
+    text-decoration: none;
 }
 
-.top-nav li a:hover {
+.top-nav li:hover {
     cursor: pointer;
+    background-color: #C6E3FF;
 }
 
 .top-nav .active-link {
