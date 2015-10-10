@@ -4,13 +4,14 @@
     angular.module('formApp')
     .controller('consentController', consentController);
 
-    consentController.$inject = ['$state'];
+    consentController.$inject = ['$scope', '$state'];
 
-    function consentController($state) {
+    function consentController($scope, $state) {
         var vm = this;
 
         vm.checkQuiz         = checkQuiz;
         vm.currentYear       = parseInt(2015, 10) || new Date().getFullYear(),
+        vm.form              = $scope.$parent.formCtrl;
         vm.oldestYear        = vm.currentYear - 100,
         vm.showQuiz          = true;
         vm.submitConsentForm = submitConsentForm;

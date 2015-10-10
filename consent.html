@@ -156,19 +156,19 @@
                     <div class="personal-info">
                         <div class="consent-form-block">
                             <label>Enter your birth year</label>
-                            <select ng-model="formCtrl.formData.birthYear" placeholder="birth year" ng-options="year for year in consentCtrl.years" required></select>
+                            <select ng-model="consentCtrl.form.formData.birthYear" placeholder="birth year" ng-options="year for year in consentCtrl.years" required></select>
                         </div>
                         <div class="consent-form-block">
                             <label>Enter your first name</label>
-                            <input type="text" placeholder="first" ng-model="formCtrl.formData.firstName" required>
+                            <input type="text" placeholder="first" ng-model="consentCtrl.form.formData.firstName" required>
                         </div>
                         <div class="consent-form-block">
                             <label>Enter your last name</label>
-                            <input type="text" placeholder="last" ng-model="formCtrl.formData.lastName" required>
+                            <input type="text" placeholder="last" ng-model="consentCtrl.form.formData.lastName" required>
                         </div>
                         <div class="consent-form-block">
                             <label>Enter your email address</label>
-                            <input type="text" placeholder="email address" ng-model="formCtrl.formData.email" required>
+                            <input type="text" placeholder="email address" ng-model="consentCtrl.form.formData.email" required>
                         </div>
                     </div>
 
@@ -176,54 +176,54 @@
                         <div class="consent-form-block">
                             <label>Are you involved in clinical care? (optional)</label>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="no">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="no">
                                 No
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="practicingPhysician">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="practicingPhysician">
                                 I am a practiving physician
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="midlevelProvider">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="midlevelProvider">
                                 I am a mid-level provider (nurse, PA, etc)
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="firstYearStudent">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="firstYearStudent">
                                 I am a first year medical student
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="secondYearStudent">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="secondYearStudent">
                                 I am a second year medical student
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="thirdYearStudent">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="thirdYearStudent">
                                 I am a third year medical student
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="fourthYearStudent">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="fourthYearStudent">
                                 I am a fourth year medical student
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="resident">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="resident">
                                 I am in a residency or fellowship program
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinicalCareInvolved" value="other">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="other">
                                 I am another kind of clinician
                             </div>
                         </div>
                         <div class="consent-form-block">
                             <label>Are you receiving clinical care? (optional)</label>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinincalCareReceiving" value="no">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinincalCareReceiving" value="no">
                                 No
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinincalCareReceiving" value="patient">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinincalCareReceiving" value="patient">
                                 I am a patient
                             </div>
                             <div>
-                                <input type="radio" ng-model="formCtrl.formData.clinincalCareReceiving" value="caregiver">
+                                <input type="radio" ng-model="consentCtrl.form.formData.clinincalCareReceiving" value="caregiver">
                                 I am a caregiver
                             </div>
                         </div>
@@ -233,11 +233,11 @@
                         <p>Medical students only (based on choice above)</p>
                         <label>Enter your school email address</label>
                         <div>
-                            <input type="text" ng-model="formCtrl.formData.schoolEmail" placeholder="school email address">
+                            <input type="text" ng-model="consentCtrl.form.formData.schoolEmail" placeholder="school email address">
                         </div>
                         <label>Enter your MCAT score (optional)</label>
                         <div>
-                            <input type="number" ng-model="formCtrl.formData.mcatScore" placeholder="MCAT score">
+                            <input type="number" ng-model="consentCtrl.form.formData.mcatScore" placeholder="MCAT score">
                         </div>
                     </div>
                 </form>
@@ -246,7 +246,7 @@
                         <p>Patients and caregivers only (based on choice above)</p>
                         <label>Enter the name of your illness(s)</label>
                         <div>
-                            <textarea ng-model="formCtrl.formData.illnesses" cols="30" rows="10"
+                            <textarea ng-model="consentCtrl.form.formData.illnesses" cols="30" rows="10"
                                 placeholder="Enter a comma seperated list of your
                                 (or your loved one's) illnessess and conditions
                                 here."></textarea>
@@ -257,109 +257,109 @@
                         <p>Caregivers only (based on choice above)</p>
                         <label>For whom are you a caretaker?</label>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.none">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.none">
                             not selected
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.husband">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.husband">
                             Husband
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.wife">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.wife">
                             Wife
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.lifePartner">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.lifePartner">
                             Other type of Spouse / Life Partner
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.son">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.son">
                             Son
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.daughter">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.daughter">
                             Daughter
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.sister">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.sister">
                             Sister
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.brother">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.brother">
                             Brother
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.mother">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.mother">
                             Mother
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.father">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.father">
                             Father
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.grandmother">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.grandmother">
                             Grandmother
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.grandfather">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.grandfather">
                             Grandfather
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.grandson">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.grandson">
                             Grandson
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.grandaughter">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.grandaughter">
                             Grandaughter
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.aunt">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.aunt">
                             Aunt
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.uncle">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.uncle">
                             Uncle
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.cousin">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.cousin">
                             Cousin
                         </div>
                         <div>
-                            <input type="checkbox" ng-model="formCtrl.formData.caretakerOptions.other">
+                            <input type="checkbox" ng-model="consentCtrl.form.formData.caretakerOptions.other">
                             Other
                         </div>
                     </div>
 
                     <div class="medical-gt-two">
                         <label>Enter your STEP 1 Score (optional)</label>
-                        <input type="number" ng-model="formCtrl.formData.step1Score" placeholder="STEP 1 score">
+                        <input type="number" ng-model="consentCtrl.form.formData.step1Score" placeholder="STEP 1 score">
                     </div>
 
                     <div class="residents-above">
                         <p>Residents and above</p>
                         <div>
                             <label>Enter your STEP 2 Score (optional)</label>
-                            <input type="number" ng-model="formCtrl.formData.step2Score" placeholder="STEP 2 score">
+                            <input type="number" ng-model="consentCtrl.form.formData.step2Score" placeholder="STEP 2 score">
                         </div>
                         <div>
                             <label>What medical school did you attend?</label>
-                            <input type="text" ng-model="formCtrl.formData.medSchool" placeholder="Medical School Name">
+                            <input type="text" ng-model="consentCtrl.form.formData.medSchool" placeholder="Medical School Name">
                         </div>
                         <div>
                             <label>What year did you graduate medical school?</label>
-                            <select ng-model="formCtrl.formData.gradYear" placeholder="Year graduated" ng-options="year for year in consentCtrl.years"></select>
+                            <select ng-model="consentCtrl.form.formData.gradYear" placeholder="Year graduated" ng-options="year for year in consentCtrl.years"></select>
                         </div>
                         <div>
                             <label>What is your NPI? (if practicing in the US)</label>
-                            <input type="text" ng-model="formCtrl.formData.npi" placeholder="National Provider Identifier">
+                            <input type="text" ng-model="consentCtrl.form.formData.npi" placeholder="National Provider Identifier">
                         </div>
                         <div>
                             <label>What is your primary specialty?</label>
-                            <input type="text" ng-model="formCtrl.formData.specialty" placeholder="Specialty">
+                            <input type="text" ng-model="consentCtrl.form.formData.specialty" placeholder="Specialty">
                         </div>
                         <div>
                             <label>In what language do you communicate with your patients?</label>
-                            <input type="text" ng-model="formCtrl.formData.patientLanguages" placeholder="Language(s) separated by commas">
+                            <input type="text" ng-model="consentCtrl.form.formData.patientLanguages" placeholder="Language(s) separated by commas">
                         </div>
                     </div>
                 </form>
