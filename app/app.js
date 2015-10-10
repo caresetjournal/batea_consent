@@ -18,22 +18,26 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         .state('form.process', {
             url: '^/process',
-            templateUrl: 'process.html'
+            templateUrl: 'process.html',
+            controller: 'processController as processCtrl'
         })
 
         .state('form.deidentify', {
             url: '^/de-identification',
-            templateUrl: 'deidentify.html'
+            templateUrl: 'deidentify.html',
+            controller: 'deidentifyController as deidentifyCtrl'
         })
 
         .state('form.data', {
             url: '^/data',
-            templateUrl: 'data.html'
+            templateUrl: 'data.html',
+            controller: 'dataController as dataCtrl'
         })
 
         .state('form.impact', {
             url: '^/impact',
-            templateUrl: 'impact.html'
+            templateUrl: 'impact.html',
+            controller: 'impactController as impactCtrl'
         })
 
         .state('form.risks', {
@@ -44,7 +48,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         .state('form.withdrawal', {
             url: '^/withdrawal',
-            templateUrl: 'withdrawal.html'
+            templateUrl: 'withdrawal.html',
+            controller: 'withdrawController as withdrawCtrl'
         })
 
         .state('form.consent', {
