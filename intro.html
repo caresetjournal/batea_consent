@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="btn-container">
-        <button class="begin-btn" ng-click="introCtrl.beginProcess()">
+        <button class="bottom-btn" ng-click="introCtrl.beginProcess()">
             Begin the consent process to become a Scholar
         </button>
     </div>
@@ -63,22 +63,32 @@
 
             <div>
                 <label>How old are you?</label>
-                <input type="radio" ng-model="introCtrl.form.formData.atLeast18" ng-value="introCtrl.formFalse">
-                I am under 18 years old
-                <input type="radio" ng-model="introCtrl.form.formData.atLeast18" ng-value="introCtrl.formTrue">
-                I am over 18 years old
+                <div>
+                    <input type="radio" ng-model="introCtrl.form.formData.atLeast18" ng-value="introCtrl.formFalse">
+                    I am under 18 years old
+                </div>
+                <div>
+                    <input type="radio" ng-model="introCtrl.form.formData.atLeast18" ng-value="introCtrl.formTrue">
+                    I am over 18 years old
+                </div>
             </div>
 
             <div>
                 <label>Do you speak English?</label>
-                <input type="radio" ng-model="introCtrl.form.formData.english" ng-value="introCtrl.formFalse">
-                I do not speak English
-                <input type="radio" ng-model="introCtrl.form.formData.english" ng-value="introCtrl.formTrue">
-                I speak English
+                <div>
+                    <input type="radio" ng-model="introCtrl.form.formData.english" ng-value="introCtrl.formFalse">
+                    I do not speak English
+                </div>
+                <div>
+                    <input type="radio" ng-model="introCtrl.form.formData.english" ng-value="introCtrl.formTrue">
+                    I speak English
+                </div>
             </div>
         </div>
     </div>
-    <input type="submit" ng-click="introCtrl.checkEligibility()">
+    <div class="btn-container">
+        <button class="bottom-btn" ng-click="introCtrl.checkEligibility()">Submit</button>
+    </div>
 </div>
 
 <div ng-if="introCtrl.showNotEligible">

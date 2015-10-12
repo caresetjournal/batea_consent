@@ -14,7 +14,9 @@
         vm.checkComprehension   = checkComprehension;
         vm.checkEligibility     = checkEligibility;
         vm.checkParticipantType = checkParticipantType;
+        vm.handleNext           = handleNext;
         vm.formData             = undefined;
+        vm.isActive             = isActive;
         vm.processForm          = processForm;
 
         activate();
@@ -62,6 +64,20 @@
                 $state.go("form.ifmedstudent");
             } else {
                 $state.go("form.joinstudy");
+            }
+        }
+
+        function handleNext() {
+            if ($state.current === 'form.deidentify') {
+                $state.go('form.data');
+            }
+        }
+
+        function isActive(linkState) {
+            if (linkState === $state.current.name) {
+                return 'active-link';
+            } else {
+                return '';
             }
         }
 

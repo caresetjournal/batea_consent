@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('formApp')
-    .controller('riskController', riskController);
+    .controller('processController', processController);
 
-    riskController.$inject = ['$state'];
+    processController.$inject = ['$state'];
 
-    function riskController($state) {
+    function processController($state) {
         var vm = this;
 
         vm.handleNext = handleNext;
@@ -14,10 +14,10 @@
 
         function handleNext() {
             console.log(vm.pageIndex);
-            if (vm.pageIndex < 3) {
+            if (vm.pageIndex < 6) {
                 vm.pageIndex++;
             } else {
-                $state.go('form.withdrawal');
+                $state.go('form.deidentify');
             }
         }
     }

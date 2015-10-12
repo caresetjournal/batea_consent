@@ -11,7 +11,6 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         // route to show our basic form (/form)
         .state('form', {
-<<<<<<< HEAD
             url: '/',
             templateUrl: 'layout.html',
             controller: 'formController as formCtrl'
@@ -19,22 +18,26 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         .state('form.process', {
             url: '^/process',
-            templateUrl: 'process.html'
+            templateUrl: 'process.html',
+            controller: 'processController as processCtrl'
         })
 
         .state('form.deidentify', {
             url: '^/de-identification',
-            templateUrl: 'deidentify.html'
+            templateUrl: 'deidentify.html',
+            controller: 'deidentifyController as deidentifyCtrl'
         })
 
         .state('form.data', {
             url: '^/data',
-            templateUrl: 'data.html'
+            templateUrl: 'data.html',
+            controller: 'dataController as dataCtrl'
         })
 
         .state('form.impact', {
             url: '^/impact',
-            templateUrl: 'impact.html'
+            templateUrl: 'impact.html',
+            controller: 'impactController as impactCtrl'
         })
 
         .state('form.risks', {
@@ -45,21 +48,21 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         .state('form.withdrawal', {
             url: '^/withdrawal',
-            templateUrl: 'withdrawal.html'
+            templateUrl: 'withdrawal.html',
+            controller: 'withdrawController as withdrawCtrl'
         })
 
         .state('form.consent', {
             url: '^/consent',
-            templateUrl: 'consent.html'
+            templateUrl: 'consent.html',
+            controller: 'consentController as consentCtrl'
         })
 
-=======
-            url: '/form',
-            templateUrl: 'form.html',
-            controller: 'formController as formCtrl'
-        })
+        //     url: '/form',
+        //     templateUrl: 'form.html',
+        //     controller: 'formController as formCtrl'
+        // })
 
->>>>>>> d016c443f65c8e41b4b927156e4e89cda22baba5
         // nested states
         // each of these sections will have their own view
         // url will be nested (/form/profile)

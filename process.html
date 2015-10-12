@@ -1,43 +1,45 @@
-<div ng-if="processCtrl.showFirst">
+<div ng-if="processCtrl.pageIndex === 1">
     <div class="main">
         <div class="content">
         </div>
     </div>
 </div>
 
-<div ng-if="processCtrl.showSecond">
+<div ng-if="processCtrl.pageIndex === 2">
     <div class="main">
         <div class="content">
         </div>
     </div>
 </div>
 
-<div ng-if="processCtrl.showThird">
+<div ng-if="processCtrl.pageIndex === 3">
     <div class="main">
         <div class="content">
         </div>
     </div>
 </div>
 
-<div ng-if="processCtrl.showFourth">
+<div ng-if="processCtrl.pageIndex === 4">
     <div class="main">
         <div class="content">
         </div>
     </div>
 </div>
 
-<div ng-if="processCtrl.showFifth">
+<div ng-if="processCtrl.pageIndex === 5">
     <div class="main">
         <div class="content">
         </div>
     </div>
 </div>
 
-<div ng-if="processCtrl.showSixth">
+<div ng-if="processCtrl.pageIndex === 6">
     <div class="main">
         <div class="content">
         </div>
     </div>
 </div>
 
-<button>Next</button>
+<div class="btn-container">
+    <button class="bottom-btn" ng-click="processCtrl.handleNext()">Next</button>
+</div>

@@ -1,12 +1,12 @@
 <ul class="top-nav">
-    <li><a ui-sref=".intro">Intro</a></li>
-    <li><a ui-sref=".process">Process</a></li>
-    <li><a ui-sref=".deidentification">De-identification</a></li>
-    <li><a ui-sref=".data">Data</a></li>
-    <li><a ui-sref=".impact">Impact</a></li>
-    <li><a ui-sref=".risks">Risks/Benefits</a></li>
-    <li><a ui-sref=".withdrawal">Withdrawal</a></li>
-    <li><a ui-sref=".consent">Consent</a></li>
+    <li ng-class="formCtrl.isActive('form.intro')"><a ui-sref=".intro">Intro</a></li>
+    <li ng-class="formCtrl.isActive('form.process')"><a ui-sref=".process">Process</a></li>
+    <li ng-class="formCtrl.isActive('form.deidentify')"><a ui-sref=".deidentify">De-identification</a></li>
+    <li ng-class="formCtrl.isActive('form.data')"><a ui-sref=".data">Data</a></li>
+    <li ng-class="formCtrl.isActive('form.impact')"><a ui-sref=".impact">Impact</a></li>
+    <li ng-class="formCtrl.isActive('form.risks')"><a ui-sref=".risks">Risks/Benefits</a></li>
+    <li ng-class="formCtrl.isActive('form.withdrawal')"><a ui-sref=".withdrawal">Withdrawal</a></li>
+    <li ng-class="formCtrl.isActive('form.consent')"><a ui-sref=".consent">Consent</a></li>
 </ul>
 <div ui-view class="inner-container"></div>
 <ul class="footer-nav">
