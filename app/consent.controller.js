@@ -13,7 +13,7 @@
         vm.currentYear       = parseInt(2015, 10) || new Date().getFullYear(),
         vm.form              = $scope.$parent.formCtrl;
         vm.oldestYear        = vm.currentYear - 100,
-        vm.showConsentForm          = true;
+        vm.showQuiz          = true;
         vm.submitConsentForm = submitConsentForm;
         vm.years             = [];
 
