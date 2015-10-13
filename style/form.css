@@ -20,6 +20,62 @@ body {
     border: 2px solid #000;
     box-shadow: 2px 2px 1px #888888;
     padding: 40px;
+    position: relative;
+}
+
+.inner-container input[type=text] {
+    margin-left: 5px;
+    padding-left: 5px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #888888;
+}
+
+.inner-container input[type=number] {
+    margin-left: 5px;
+    padding-left: 5px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #888888;
+}
+
+
+.inner-container select {
+    min-width: 100px;
+}
+
+.inner-container textarea {
+    text-align: left;
+    margin-left: 5px;
+    padding-left: 5px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #888888;
+}
+
+::-webkit-input-placeholder {
+    text-align: left;
+}
+:-moz-placeholder {
+    text-align: left;
+}
+:-ms-input-placeholder {
+    text-align: left;
+}
+
+input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+input[type=radio]:hover {
+    cursor: pointer;
+}
+
+.inner-container .page-title {
+    position: absolute;
+    top: -12px;
+    background-color: #fff;
+    padding: 0 5px;
 }
 
 .inner-container * {
@@ -97,6 +153,31 @@ body {
     width: 60%;
 }
 
+.main .content-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 80%;
+}
+
+.main .content-flex .med-div {
+    flex-basis: 40%;
+    text-align: center;
+}
+
+.main .content-flex .small-div {
+    flex-basis: 10%;
+    text-align: center;
+}
+
+.main .content-flex .half-div {
+    flex-basis: 50%;
+}
+
 .main .content-small {
     width: 50%;
 }
@@ -117,6 +198,16 @@ body {
     margin-top: 20px;
 }
 
+.main .inline-link {
+    text-decoration: underline;
+    color: #1E90FF;
+}
+
+.main .inline-link:hover {
+    cursor: pointer;
+    color: #CCC;
+}
+
 .btn-container {
     margin-top: 30px;
     text-align: center;
@@ -128,7 +219,62 @@ body {
     box-shadow: 2px 2px 1px #888888;
 }
 
+.inner-container .bottom-btn[disabled] {
+    color: #fff;
+    background-color: #ccc;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 1px #888888;
+}
+
+.inner-container .bottom-btn[disabled]:hover {
+    background-color: #ccc;
+}
+
 .inner-container .bottom-btn:hover {
     background-color: #A0D0FF;
     box-shadow: 2px 2px 1px #888888;
+}
+
+.content .consent-form-block {
+    margin-top: 20px;
+}
+
+.content .form-separator {
+    margin-top: 40px;
+}
+
+.content #birth-year {
+    margin-left: 37px;
+}
+
+.content #first-name {
+    margin-left: 33px;
+}
+
+.content #last-name {
+    margin-left: 36px;
+}
+
+.content #step2-score {
+    margin-left: 168px;
+}
+
+.content #med-school {
+    margin-left: 152px;
+}
+
+.content #med-year {
+    margin-left: 99px;
+}
+
+.content #npi {
+    margin-left: 121px;
+}
+
+.content #specialty {
+    margin-left: 191px;
+}
+
+.content #language {
+    margin-left: 0;
 }
