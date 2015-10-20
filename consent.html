@@ -2,6 +2,7 @@
     <div class="main">
         <div class="content">
             <div ng-if="consentCtrl.showQuiz">
+                <p class="page-title">Consent Quiz</p>
                 <form ng-submit="consentCtrl.checkQuiz()">
                     <div class="consent-block">
                         <label>
@@ -159,22 +160,22 @@
                     By providing the information below, and then clicking the
                     "I consent" button, you consent to participate in the study
                     and to share your data.
-                    <div><a href="">Read the full consent document</a></div>
+                    <div><a class="inline-link" href="http://batea.docgraph.org/informedconsent" target="_blank">Read the full consent document</a></div>
                 </p>
 
-                <form ng-submit="consentCtrl.submitConsent()">
+                <form name="consentForm">
                     <div class="personal-info">
                         <div class="consent-form-block">
                             <label>Enter your birth year</label>
-                            <select ng-model="consentCtrl.form.formData.birthYear" placeholder="birth year" ng-options="year for year in consentCtrl.years" required></select>
+                            <select id="birth-year" ng-model="consentCtrl.form.formData.birthYear" placeholder="birth year" ng-options="year for year in consentCtrl.years" required></select>
                         </div>
                         <div class="consent-form-block">
                             <label>Enter your first name</label>
-                            <input type="text" placeholder="first" ng-model="consentCtrl.form.formData.firstName" required>
+                            <input id="first-name" type="text" name="firstName" placeholder="first" ng-model="consentCtrl.form.formData.firstName" required>
                         </div>
                         <div class="consent-form-block">
                             <label>Enter your last name</label>
-                            <input type="text" placeholder="last" ng-model="consentCtrl.form.formData.lastName" required>
+                            <input id="last-name" type="text" name="lastName" placeholder="last" ng-model="consentCtrl.form.formData.lastName" required>
                         </div>
                         <div class="consent-form-block">
                             <label>Enter your email address</label>
@@ -182,7 +183,7 @@
                         </div>
                     </div>
 
-                    <div class="clinical-care">
+                    <div class="clinical-care form-separator">
                         <div class="consent-form-block">
                             <label>Are you involved in clinical care? (optional)</label>
                             <div>
@@ -239,20 +240,18 @@
                         </div>
                     </div>
 
-                    <div class="med-students">
+                    <div class="med-students form-separator">
                         <p>Medical students only (based on choice above)</p>
                         <label>Enter your school email address</label>
+                        <input type="text" ng-model="consentCtrl.form.formData.schoolEmail" placeholder="school email address">
                         <div>
-                            <input type="text" ng-model="consentCtrl.form.formData.schoolEmail" placeholder="school email address">
-                        </div>
-                        <label>Enter your MCAT score (optional)</label>
-                        <div>
+                            <label>Enter your MCAT score (optional)</label>
                             <input type="number" ng-model="consentCtrl.form.formData.mcatScore" placeholder="MCAT score">
                         </div>
                     </div>
                 </form>
 
-                    <div class="patients-caregivers">
+                    <div class="patients-caregivers form-separator">
                         <p>Patients and caregivers only (based on choice above)</p>
                         <label>Enter the name of your illness(s)</label>
                         <div>
@@ -263,7 +262,7 @@
                         </div>
                     </div>
 
-                    <div class="caregivers">
+                    <div class="caregivers form-separator">
                         <p>Caregivers only (based on choice above)</p>
                         <label>For whom are you a caretaker?</label>
                         <div>
@@ -340,41 +339,104 @@
                         </div>
                     </div>
 
-                    <div class="medical-gt-two">
+                    <div class="medical-gt-two form-separator">
                         <label>Enter your STEP 1 Score (optional)</label>
                         <input type="number" ng-model="consentCtrl.form.formData.step1Score" placeholder="STEP 1 score">
                     </div>
 
-                    <div class="residents-above">
+                    <div class="residents-above form-separator">
                         <p>Residents and above</p>
                         <div>
                             <label>Enter your STEP 2 Score (optional)</label>
-                            <input type="number" ng-model="consentCtrl.form.formData.step2Score" placeholder="STEP 2 score">
+                            <input id="step2-score" type="number" ng-model="consentCtrl.form.formData.step2Score" placeholder="STEP 2 score">
                         </div>
                         <div>
                             <label>What medical school did you attend?</label>
-                            <input type="text" ng-model="consentCtrl.form.formData.medSchool" placeholder="Medical School Name">
+                            <input id="med-school" type="text" ng-model="consentCtrl.form.formData.medSchool" placeholder="Medical School Name">
                         </div>
                         <div>
                             <label>What year did you graduate medical school?</label>
-                            <select ng-model="consentCtrl.form.formData.gradYear" placeholder="Year graduated" ng-options="year for year in consentCtrl.years"></select>
+                            <select id="med-year" ng-model="consentCtrl.form.formData.gradYear" placeholder="Year graduated" ng-options="year for year in consentCtrl.years"></select>
                         </div>
                         <div>
                             <label>What is your NPI? (if practicing in the US)</label>
-                            <input type="text" ng-model="consentCtrl.form.formData.npi" placeholder="National Provider Identifier">
+                            <input id="npi" type="text" ng-model="consentCtrl.form.formData.npi" placeholder="National Provider Identifier">
                         </div>
                         <div>
                             <label>What is your primary specialty?</label>
-                            <input type="text" ng-model="consentCtrl.form.formData.specialty" placeholder="Specialty">
+                            <input id="specialty" type="text" ng-model="consentCtrl.form.formData.specialty" placeholder="Specialty">
                         </div>
                         <div>
                             <label>In what language do you communicate with your patients?</label>
-                            <input type="text" ng-model="consentCtrl.form.formData.patientLanguages" placeholder="Language(s) separated by commas">
+                            <input id="language" type="text" ng-model="consentCtrl.form.formData.patientLanguages" placeholder="Language(s) separated by commas">
                         </div>
                     </div>
-                </form>
                 <div class="btn-container">
-                    <button class="bottom-btn" ng-click="consentCtrl.submitConsentForm()">Submit</button>
+                    <input class="bottom-btn" type="submit" ng-click="consentCtrl.submitConsentForm()" ng-disabled="consentForm.$invalid">
+                </div>
+                </form>
+                    <!-- <button class="bottom-btn" ng-click="consentCtrl.submitConsentForm()">Submit</button> -->
+            </div>
+            <div ng-if="consentCtrl.formSuccess">
+                <h2>Batea Consent Complete</h2>
+                <h3>You are now a scholar in the Batea stude</h3>
+                <p>
+                    Thank you for joining Batea as a Co-Researcher. We are excited
+                    you want to help us improve Wikipedia medical articles!
+                </p>
+                <p>
+                    By signing up as a Co-Researcher, you have helped the study
+                    significantly. Identifying yourself helps us classify your
+                    data. This will be useful as we analyze and aggregate your
+                    data with others' to see browsing trends.
+                </p>
+                <p>Remember</p>
+                <p>
+                    1. Batea only uploads browsing sessions to its server if
+                    they are clinical-related. We have multiple checks in place
+                    to make sure nothing personal is uploaded from your browser
+                    or added to a Batea data set.
+                </p>
+                <p>
+                    2. You may stop Batea from recording and uploading your
+                    current session by pressing its icon in your search bar
+                    (turning it red). These icon colors tell you what Batea is
+                    doing:
+                </p>
+                <p>
+                    3. Batea will de-identify and anonymize your browsing data before
+                    it is released to the public. Though you have identified
+                    yourself to Batea researchers, we won't identify you in any
+                    of our publicly released data sets.
+                </p>
+                <p>
+                    As a scholar, you will have:
+                </p>
+                <ol>
+                    <li>
+                        the option to promote yourself as a Batea Co-Researcher
+                        (great for CVs, resumes, etc)
+                    </li>
+                    <li>
+                        your name mentioned in data and research credits (opt-out
+                        of this by emailing us)
+                    </li>
+                    <li>
+                        ability to download and examine your own data
+                    </li>
+                    <li>
+                        the opportunity to interact with the researchers about
+                        Batea.
+                    </li>
+                </ol>
+                <p>
+                    You can visit Batea at its extension options page. There
+                    you can change your browsing setting or switch back to being
+                    an anonymous participant. If you ever wish to leave the Batea
+                    study entirely, simply uninstall the extension.
+                </p>
+                <div class="btn-container">
+                    <button class="bottom-btn"><a href="chrome://extensions/" target="_blank">Visit your Batea Options</a></button>
                 </div>
             </div>
         </div>

@@ -4,9 +4,9 @@
     angular.module('formApp')
     .controller('consentController', consentController);
 
-    consentController.$inject = ['$scope', '$state'];
+    consentController.$inject = ['$scope', '$state', 'formFactory'];
 
-    function consentController($scope, $state) {
+    function consentController($scope, $state, formFactory) {
         var vm = this;
 
         vm.checkQuiz         = checkQuiz;
@@ -72,7 +72,15 @@
         }
 
         function submitConsentForm() {
-
+            formFactory.submitForm(vm.form.formData)
+            .then(function(response) {
+                vm.showConsentForm = false;
+                vm.formSuccess = true;
+                console.log(response)
+            })
+            .catch(function(response) {
+                console.log(response);
+            });
         }
     }
 })();

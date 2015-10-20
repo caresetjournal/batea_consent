@@ -6,9 +6,9 @@
     // =================================================
     .controller('formController', formController);
 
-    formController.$inject = ['$state', '$stateParams', 'formFactory']
+    formController.$inject = ['$scope', '$state', '$stateParams', 'formFactory']
 
-    function formController($state, $stateParams, formFactory) {
+    function formController($scope, $state, $stateParams, formFactory) {
         var vm = this;
 
         vm.checkComprehension   = checkComprehension;
@@ -27,7 +27,15 @@
             // we will store all of our form data in this object
 
             vm.formData = {"random_id": random};
+
+            console.log(vm.formData);
         }
+
+        $scope.$watch(function() {
+            return vm.formData;
+        }, function(newVal, oldVal) {
+            console.log(newVal);
+        }, true)
 
         function checkComprehension() {
             if (vm.formData.comprehension_1 === "correct" &&
