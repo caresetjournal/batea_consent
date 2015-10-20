@@ -144,6 +144,16 @@
                 </div>
             </div>
 
+             <div ng-if="consentCtrl.quizFail">
+                <p class="page-title">Consent Quiz</p>
+
+                <p>You must answer at least 4 questions correctly please try again.</p>
+
+                <div class="btn-container">
+                    <button class="bottom-btn" ng-click="consentCtrl.retryQuiz()">Retry</button>
+                </div>
+            </div>
+
             <div ng-if="consentCtrl.showConsentForm">
                 <p>
                     By providing the information below, and then clicking the

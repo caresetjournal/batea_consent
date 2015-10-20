@@ -84,8 +84,7 @@
         // function to process the form
         function processForm() {
             console.log(vm.formData);
-            // alert('POST form contents to webservice');
-            formFactory.submitForm('https://registry.npi.io/write/api/consent-form', vm.formData)
+            formFactory.submitForm('https://registry.npi.io/write/api/ip/consent-form', vm.formData)
             .then(function(response) {
                 console.log(response);
             })

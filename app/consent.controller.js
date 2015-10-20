@@ -13,8 +13,10 @@
         vm.currentYear       = parseInt(2015, 10) || new Date().getFullYear(),
         vm.form              = $scope.$parent.formCtrl;
         vm.oldestYear        = vm.currentYear - 100,
+        vm.retryQuiz         = retryQuiz;
         vm.showQuiz          = true;
         vm.submitConsentForm = submitConsentForm;
+        vm.quizFail          = false;
         vm.years             = [];
 
         activate();
@@ -58,7 +60,15 @@
             if (correctCount >= 4) {
                 vm.showQuiz = false;
                 vm.showConsentForm = true;
+            } else {
+                vm.showQuiz = false;
+                vm.quizFail = true;
             }
+        }
+
+        function retryQuiz() {
+            vm.showConsentForm = vm.quizFail = false;
+            vm.showQuiz = true;
         }
 
         function submitConsentForm() {

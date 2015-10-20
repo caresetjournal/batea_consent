@@ -14,9 +14,17 @@
         return factory;
 
         function submitForm(url, formData) {
+            var req = {
+                method: 'POST',
+                url: url,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: formData
+            }
             var postPromise = $q.defer();
 
-            $http.post(url, formData)
+            $http(req)
             .then(function(response) {
                 console.log(response);
                 postPromise.resolve(response.data);
