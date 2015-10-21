@@ -31,12 +31,6 @@
             console.log(vm.formData);
         }
 
-        $scope.$watch(function() {
-            return vm.formData;
-        }, function(newVal, oldVal) {
-            console.log(newVal);
-        }, true)
-
         function checkComprehension() {
             if (vm.formData.comprehension_1 === "correct" &&
                 vm.formData.comprehension_2 === "correct" &&
@@ -94,7 +88,6 @@
             console.log(vm.formData);
             formFactory.submitForm('https://registry.npi.io/write/api/ip/consent-form', vm.formData)
             .then(function(response) {
-                console.log(response);
             })
             .catch(function(response) {
                 console.warn(response.message);

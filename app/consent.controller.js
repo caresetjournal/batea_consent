@@ -72,11 +72,10 @@
         }
 
         function submitConsentForm() {
-            formFactory.submitForm(vm.form.formData)
+            formFactory.submitForm('https://registry.npi.io/write/api/ip/consent-form', vm.form.formData)
             .then(function(response) {
                 vm.showConsentForm = false;
                 vm.formSuccess = true;
-                console.log(response)
             })
             .catch(function(response) {
                 console.log(response);

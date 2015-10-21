@@ -26,7 +26,6 @@
 
             $http(req)
             .then(function(response) {
-                console.log(response);
                 postPromise.resolve(response.data);
             })
             .catch(function(response) {
