@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <title>POST JSON Example for Djmongo</title>
+   
+   <script type="text/javascript">
+    
+    var action_url = "https://registry.npi.io/write/api/ip/consent-form"
+    function mySubmit() {
+         console.info("mySubmit Example for DjMongo")
+         var form = document.getElementById('myform');
+         var results_view = document.getElementById('demo');
+         var data = {};
+         for (var i = 0, ii = form.length; i < ii; ++i) {
+            var input = form[i];
+                if (input.name) {
+                    data[input.name] = input.value;
+              }
+          }
+         // construct an HTTP request
+         var xhr = new XMLHttpRequest();
+         xhr.open(form.method, action_url , true);
+         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+         
+         // send the collected data as JSON
+         xhr.send(JSON.stringify(data));
+         
+         xhr.onloadend = function () {
+          document.getElementById("demo").innerHTML =  xhr.responseText;
+        };
+         
+         };
+    </script>    
+   
+   
+</head>
+
+
+<body>
+    
+   
+
+<div class="container">
+    <div class="row">    
+<h1>Form to JSON POST Example</h1>    
+<form action="" method="post" name="myform" id="myform">
+
+<ul>
+<li> First<input name="firstName" value="harry" /></li> 
+<li> Last <input name="lastName" value="tester" /></li> 
+<li> Email<input name="email" value="testtest@test.com" /></li> 
+</ul>
+
+</form>
+
+<input id="mySubmit" type="submit" name="submit" value="Submit" onclick="mySubmit()">
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">   
+<h1>Results</h1>
+  <pre>
+  <p id="demo"> </p>
+      
+    </div>
+    
+    </pre>
+</div>
+</body>
+
+
+
+</body>
+</html> 
