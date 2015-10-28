@@ -22,7 +22,6 @@
         }
 
         function checkEligibility() {
-            console.log($scope.$parent.formCtrl.formData);
             if (vm.form.formData.atLeast18 && vm.form.formData.english) {
                 $state.go('form.process');
             } else {

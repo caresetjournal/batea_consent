@@ -5,7 +5,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
 // configuring our routes
 // =============================================================================
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
     $stateProvider
 

@@ -6,14 +6,20 @@
     // =================================================
     .controller('formController', formController);
 
-    formController.$inject = ['$scope', '$state', '$stateParams', 'formFactory']
+    formController.$inject = ['$scope',
+        '$state',
+        '$stateParams',
+        'formFactory',
+        'progressFactory'
+    ];
 
-    function formController($scope, $state, $stateParams, formFactory) {
+    function formController($scope, $state, $stateParams, formFactory, progressFactory) {
         var vm = this;
 
         vm.checkComprehension   = checkComprehension;
         vm.checkEligibility     = checkEligibility;
         vm.checkParticipantType = checkParticipantType;
+        vm.checkState           = checkState;
         vm.handleNext           = handleNext;
         vm.formData             = undefined;
         vm.isActive             = isActive;
@@ -21,14 +27,22 @@
 
         activate();
 
+        $scope.$on('$locationChangeStart', function(event) {
+            var reroute = progressFactory.checkFurthestState($state.current.name);
+
+            if (reroute) {
+                $state.go(reroute);
+            } else {
+                progressFactory.setFurthestState($state.current.name);
+            }
+        });
+
         function activate() {
             // Create a randowm number
             var random = Math.floor((Math.random() * 9000000000) + 1000000000);
             // we will store all of our form data in this object
 
             vm.formData = {"random_id": random};
-
-            console.log(vm.formData);
         }
 
         function checkComprehension() {
@@ -69,6 +83,14 @@
             }
         }
 
+        function checkState(state) {
+            if (!progressFactory.isStateAvailable(state)) {
+                return 'disabled';
+            } else {
+                return '';
+            }
+        }
+
         function handleNext() {
             if ($state.current === 'form.deidentify') {
                 $state.go('form.data');
@@ -79,7 +101,11 @@
             if (linkState === $state.current.name) {
                 return 'active-link';
             } else {
-                return '';
+                if (!progressFactory.isStateAvailable(linkState)) {
+                    return 'disabled';
+                } else {
+                    return '';
+                }
             }
         }
 

@@ -1,12 +1,28 @@
 <ul class="top-nav">
-    <li ng-class="formCtrl.isActive('form.intro')"><a ui-sref=".intro">Intro</a></li>
-    <li ng-class="formCtrl.isActive('form.process')"><a ui-sref=".process">Process</a></li>
-    <li ng-class="formCtrl.isActive('form.deidentify')"><a ui-sref=".deidentify">De-identification</a></li>
-    <li ng-class="formCtrl.isActive('form.data')"><a ui-sref=".data">Data</a></li>
-    <li ng-class="formCtrl.isActive('form.impact')"><a ui-sref=".impact">Impact</a></li>
-    <li ng-class="formCtrl.isActive('form.risks')"><a ui-sref=".risks">Risks/Benefits</a></li>
-    <li ng-class="formCtrl.isActive('form.withdrawal')"><a ui-sref=".withdrawal">Withdrawal</a></li>
-    <li ng-class="formCtrl.isActive('form.consent')"><a ui-sref=".consent">Consent</a></li>
+    <li ng-class="formCtrl.isActive('form.intro')">
+        <a ui-sref=".intro" ng-class="formCtrl.checkState('form.intro')">Intro</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.process')">
+        <a ui-sref=".process" ng-class="formCtrl.checkState('form.process')">Process</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.deidentify')">
+        <a ui-sref=".deidentify" ng-class="formCtrl.checkState('form.deidentify')">De-identification</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.data')">
+        <a ui-sref=".data" ng-class="formCtrl.checkState('form.data')">Data</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.impact')">
+        <a ui-sref=".impact" ng-class="formCtrl.checkState('form.impact')">Impact</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.risks')">
+        <a ui-sref=".risks" ng-class="formCtrl.checkState('form.risks')">Risks/Benefits</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.withdrawal')">
+        <a ui-sref=".withdrawal" ng-class="formCtrl.checkState('form.withdrawal')">Withdrawal</a>
+    </li>
+    <li ng-class="formCtrl.isActive('form.consent')">
+        <a ui-sref=".consent" ng-class="formCtrl.checkState('form.consent')">Consent</a>
+    </li>
 </ul>
 <div ui-view class="inner-container"></div>
 <ul class="footer-nav">

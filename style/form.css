@@ -119,6 +119,13 @@ input[type=radio]:hover {
     background-color: #C6E3FF;
 }
 
+li.disabled {
+    color: #AAAAAA;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+}
+
 .top-nav .active-link {
     background-color: #A0D0FF;
 }
