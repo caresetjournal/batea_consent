@@ -1,5 +1,14 @@
-Consent Form for Batea Project
+Batea Consent Form
 ==============================
+
+As part of the batea project (https://batea.docgraph.org/) we needed to have a sophisticated web-based consent form. 
+
+In order to accomplish this, we created a web-based rewrite/fork of the Sage-BioNetworks PCC Toolkit https://github.com/Sage-Bionetworks/PCC-Toolkit
+
+The codebase portion of the consent was written from-scratch by the folks at Videntity, but the general flow of the consent process was copied as identically as possible. We were even able to reuse some of the excellent graphics and animations from that original project. 
+
+We chose to implement this consent form entirely in Angular JS in the hopes that other web-based projects that required IRB-approved consent processes would be able to reuse as much as possible (in the same way the Sage-BioNetworks encourages forking of their code for iOS applications). By using Angular and keeping everything in one, very large, web form, you can include a fork of this code in your own web-based consent process no matter what backend you are using to implement the rest of your web application.
+
 
 *Created by Videntity for DocGraph*
 
