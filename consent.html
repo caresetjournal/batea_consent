@@ -192,7 +192,7 @@
                             </div>
                             <div>
                                 <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="practicingPhysician">
-c                                I am a practicing physician
+                                I am a practicing physician
                             </div>
                             <div>
                                 <input type="radio" ng-model="consentCtrl.form.formData.clinicalCareInvolved" value="midlevelProvider">
@@ -251,7 +251,7 @@ c                                I am a practicing physician
                     </div>
                 </form>
 
-                    <div class="patients-caregivers form-separator">
+                    <div class="patients-caregivers form-separator" ng-show="consentCtrl.showIllnesses()">
                         <p>Patients and caregivers only (based on choice above)</p>
                         <label>Enter the name of your illness(s)</label>
                         <div>
@@ -339,34 +339,34 @@ c                                I am a practicing physician
                         </div>
                     </div>
 
-                    <div class="medical-gt-two form-separator">
+                    <div class="medical-gt-two form-separator" ng-show="consentCtrl.showStepOne()">
                         <label>Enter your STEP 1 Score (optional)</label>
                         <input type="number" ng-model="consentCtrl.form.formData.step1Score" placeholder="STEP 1 score">
                     </div>
 
                     <div class="residents-above form-separator">
-                        <p>Residents and above</p>
-                        <div>
+                        <p ng-show="consentCtrl.showStepTwo()">Residents and above</p>
+                        <div ng-show="consentCtrl.showStepTwo()">
                             <label>Enter your STEP 2 Score (optional)</label>
                             <input id="step2-score" type="number" ng-model="consentCtrl.form.formData.step2Score" placeholder="STEP 2 score">
                         </div>
-                        <div>
+                        <div ng-show="consentCtrl.showStepTwo()">
                             <label>What medical school did you attend?</label>
                             <input id="med-school" type="text" ng-model="consentCtrl.form.formData.medSchool" placeholder="Medical School Name">
                         </div>
-                        <div>
+                        <div ng-show="consentCtrl.showStepTwo()">
                             <label>What year did you graduate medical school?</label>
                             <select id="med-year" ng-model="consentCtrl.form.formData.gradYear" placeholder="Year graduated" ng-options="year for year in consentCtrl.years"></select>
                         </div>
-                        <div>
+                        <div ng-show="consentCtrl.showNPI()">
                             <label>What is your NPI? (if practicing in the US)</label>
                             <input id="npi" type="text" ng-model="consentCtrl.form.formData.npi" placeholder="National Provider Identifier">
                         </div>
-                        <div>
+                        <div ng-show="consentCtrl.showStepTwo()">
                             <label>What is your primary specialty?</label>
                             <input id="specialty" type="text" ng-model="consentCtrl.form.formData.specialty" placeholder="Specialty">
                         </div>
-                        <div>
+                        <div ng-show="consentCtrl.showLanguages()">
                             <label>In what language do you communicate with your patients?</label>
                             <input id="language" type="text" ng-model="consentCtrl.form.formData.patientLanguages" placeholder="Language(s) separated by commas">
                         </div>

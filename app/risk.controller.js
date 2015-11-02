@@ -13,7 +13,6 @@
         vm.pageIndex  = 1;
 
         function handleNext() {
-            console.log(vm.pageIndex);
             if (vm.pageIndex < 3) {
                 vm.pageIndex++;
             } else {

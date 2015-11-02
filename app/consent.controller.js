@@ -14,6 +14,11 @@
         vm.form              = $scope.$parent.formCtrl;
         vm.oldestYear        = vm.currentYear - 100,
         vm.retryQuiz         = retryQuiz;
+        vm.showIllnesses     = showIllnesses;
+        vm.showLanguages     = showLanguages;
+        vm.showNPI           = showNPI;
+        vm.showStepOne       = showStepOne;
+        vm.showStepTwo       = showStepTwo;
         vm.showQuiz          = true;
         vm.submitConsentForm = submitConsentForm;
         vm.quizFail          = false;
@@ -71,8 +76,34 @@
             vm.showQuiz = true;
         }
 
+        function showIllnesses() {
+            return (vm.form.formData.clinincalCareReceiving === "patient"
+                || vm.form.formData.clinincalCareReceiving === "caregiver");
+        }
+
+        function showLanguages() {
+            return vm.form.formData.clinincalCareReceiving === "caregiver";
+        }
+
+        function showNPI() {
+            return (vm.form.formData.clinicalCareInvolved === "practicingPhysician"
+                || vm.form.formData.clinicalCareInvolved === "midlevelProvider"
+                || vm.form.formData.clinicalCareInvolved === "resident");
+        }
+
+        function showStepOne() {
+            return (vm.form.formData.clinicalCareInvolved === "thirdYearStudent"
+                || vm.form.formData.clinicalCareInvolved === "fourthYearStudent"
+                || vm.form.formData.clinicalCareInvolved === "resident");
+        }
+
+        function showStepTwo() {
+            return (vm.form.formData.clinicalCareInvolved === "practicingPhysician"
+                || vm.form.formData.clinicalCareInvolved === "resident");
+        }
+
         function submitConsentForm() {
-            formFactory.submitForm('https://registry.npi.io/write/api/ip/consent-form', vm.form.formData)
+            formFactory.submitForm(CONFIG.postUrl, vm.form.formData)
             .then(function(response) {
                 vm.showConsentForm = false;
                 vm.formSuccess = true;

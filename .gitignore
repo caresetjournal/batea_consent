@@ -1,3 +1,4 @@
 *.komodoproject
 *~
 node_modules
+config.js

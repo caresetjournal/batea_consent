@@ -112,7 +112,7 @@
         // function to process the form
         function processForm() {
             console.log(vm.formData);
-            formFactory.submitForm('https://registry.npi.io/write/api/ip/consent-form', vm.formData)
+            formFactory.submitForm(CONFIG.postUrl, vm.formData)
             .then(function(response) {
             })
             .catch(function(response) {
