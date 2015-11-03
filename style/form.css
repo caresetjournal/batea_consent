@@ -84,6 +84,7 @@ input[type=radio]:hover {
 
 .top-nav, .footer-nav {
     display: flex;
+    display:-webkit-flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -151,6 +152,7 @@ li.disabled {
 
 .main {
     display: flex;
+    display:-webkit-flex
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -167,6 +169,7 @@ li.disabled {
 
 .main .content-flex {
     display: flex;
+    display:-webkit-flex
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
