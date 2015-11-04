@@ -36,13 +36,23 @@
                 progressFactory.setFurthestState($state.current.name);
             }
         });
-
+        
+        function merge_objects(obj1,obj2){
+            var obj3 = {};
+            for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+            for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+            return obj3;
+        }
+        
+         
         function activate() {
-            // Create a randowm number
+            // Create a random number
             var random = Math.floor((Math.random() * 9000000000) + 1000000000);
             // we will store all of our form data in this object
-
-            vm.formData = {"random_id": random};
+            var queryDict = {}
+            location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+            vm.formData = merge_objects({"random_id": random},queryDict);
+    
         }
 
         function checkComprehension() {
@@ -111,7 +121,7 @@
 
         // function to process the form
         function processForm() {
-            console.log(vm.formData);
+            //console.log(vm.formData);
             formFactory.submitForm(CONFIG.postUrl, vm.formData)
             .then(function(response) {
             })
