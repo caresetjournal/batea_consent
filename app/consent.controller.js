@@ -12,10 +12,11 @@
         vm.checkQuiz         = checkQuiz;
         vm.currentYear       = parseInt(2015, 10) || new Date().getFullYear(),
         vm.form              = $scope.$parent.formCtrl;
+        vm.isCaregiver       = isCaregiver;
+        vm.isMedStudent      = isMedStudent;
         vm.oldestYear        = vm.currentYear - 100,
         vm.retryQuiz         = retryQuiz;
         vm.showIllnesses     = showIllnesses;
-        vm.showLanguages     = showLanguages;
         vm.showNPI           = showNPI;
         vm.showStepOne       = showStepOne;
         vm.showStepTwo       = showStepTwo;
@@ -71,6 +72,19 @@
             }
         }
 
+        function isCaregiver() {
+            return vm.form.formData.clinincalCareReceiving === "caregiver";
+        }
+
+        function isMedStudent() {
+            return (
+                vm.form.formData.clinicalCareInvolved === "firstYearStudent" ||
+                vm.form.formData.clinicalCareInvolved === "secondYearStudent" ||
+                vm.form.formData.clinicalCareInvolved === "thirdYearStudent" ||
+                vm.form.formData.clinicalCareInvolved === "fourthYearStudent"
+            );
+        }
+
         function retryQuiz() {
             vm.showConsentForm = vm.quizFail = false;
             vm.showQuiz = true;
@@ -79,10 +93,6 @@
         function showIllnesses() {
             return (vm.form.formData.clinincalCareReceiving === "patient"
                 || vm.form.formData.clinincalCareReceiving === "caregiver");
-        }
-
-        function showLanguages() {
-            return vm.form.formData.clinincalCareReceiving === "caregiver";
         }
 
         function showNPI() {
