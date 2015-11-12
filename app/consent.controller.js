@@ -113,6 +113,7 @@
         }
 
         function submitConsentForm() {
+		vm.form.formData.is_consented = true;
             formFactory.submitForm(CONFIG.postUrl, vm.form.formData)
             .then(function(response) {
                 vm.showConsentForm = false;
