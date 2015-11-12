@@ -122,6 +122,7 @@
         // function to process the form
         function processForm() {
             //console.log(vm.formData);
+            vm.formData.is_consented = true; //the central result of this process...
             formFactory.submitForm(CONFIG.postUrl, vm.formData)
             .then(function(response) {
             })
