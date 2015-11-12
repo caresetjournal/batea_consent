@@ -260,9 +260,7 @@
                         <label>Enter the name of your illness(s)</label>
                         <div>
                             <textarea ng-model="consentCtrl.form.formData.illnesses" cols="30" rows="10"
-                                placeholder="Enter a comma seperated list of your
-                                (or your loved one's) illnessess and conditions
-                                here."></textarea>
+                                placeholder="Enter a comma seperated list of your (or your loved one's) illnessess and conditions here."></textarea>
                         </div>
                     </div>
 
@@ -349,10 +347,9 @@
                     </div>
 
                     <div class="residents-above form-separator">
-                        <p ng-show="consentCtrl.showStepTwo()">Residents and above</p>
                         <div ng-show="consentCtrl.showStepTwo()">
                             <label>Enter your STEP 2 Score (optional)</label>
-                            <input id="step2-score" type="number" ng-model="consentCtrl.form.formData.step2Score" placeholder="STEP 2 score">
+                            <input  id="step2-score" type="number" ng-model="consentCtrl.form.formData.step2Score" placeholder="STEP 2 score">
                         </div>
                         <div ng-show="consentCtrl.showStepTwo()">
                             <label>What medical school did you attend?</label>
@@ -363,16 +360,16 @@
                             <select id="med-year" ng-model="consentCtrl.form.formData.gradYear" placeholder="Year graduated" ng-options="year for year in consentCtrl.years"></select>
                         </div>
                         <div ng-show="consentCtrl.showNPI()">
-                            <label>What is your NPI? (if practicing in the US)</label>
-                            <input id="npi" type="text" ng-model="consentCtrl.form.formData.npi" placeholder="National Provider Identifier">
+                            <label>What is your National Provider Identifier - NPI? (US only)</label>
+                            <input id="npi" type="text" ng-model="consentCtrl.form.formData.npi" placeholder="NPI">
                         </div>
                         <div ng-show="consentCtrl.showStepTwo()">
                             <label>What is your primary specialty?</label>
                             <input id="specialty" type="text" ng-model="consentCtrl.form.formData.specialty" placeholder="Specialty">
                         </div>
-                        <div ng-show="consentCtrl.isCaregiver()">
+                        <div ng-show="consentCtrl.showStepTwo()">
                             <label>In what language do you communicate with your patients?</label>
-                            <input id="language" type="text" ng-model="consentCtrl.form.formData.patientLanguages" placeholder="Language(s) separated by commas">
+                            <input id="language" type="text" ng-model="consentCtrl.form.formData.patientLanguages" placeholder="English, Spanish, etc">
                         </div>
                     </div>
                 <div class="btn-container">
