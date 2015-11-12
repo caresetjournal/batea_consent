@@ -1,7 +1,7 @@
 Batea Consent Form
 ==============================
 
-As part of the batea project (https://batea.docgraph.org/) we needed to have a sophisticated web-based consent form. 
+As part of the batea project (https://batea.docgraph.com/) we needed to have a sophisticated web-based consent form. 
 
 In order to accomplish this, we created a web-based rewrite/fork of the Sage-BioNetworks PCC Toolkit https://github.com/Sage-Bionetworks/PCC-Toolkit
 
@@ -9,36 +9,9 @@ The codebase portion of the consent was written from-scratch by the folks at Vid
 
 We chose to implement this consent form entirely in Angular JS in the hopes that other web-based projects that required IRB-approved consent processes would be able to reuse as much as possible (in the same way the Sage-BioNetworks encourages forking of their code for iOS applications). By using Angular and keeping everything in one, very large, web form, you can include a fork of this code in your own web-based consent process no matter what backend you are using to implement the rest of your web application.
 
+This should make it ideal for doing complex consent forms for web applications and/or browser extensions.
 
 *Created by Videntity for DocGraph*
-
-Introduction
-------------
-
-consent-form is an browser-based application using HTML5, AngularJS, and Bootstrap3  that submits data HTTP POST as JSON to a RESTFul API connected to a MongoDB database.  The backend RESTFul service is currenly provided by DjMongo https://github.com/videntity/django-djmongo.
-
-
-Components
------------
-
-* Source Code(Private): https://github.com/videntity/consent-form
-* Client application: http://consent.npi.io
-* Submission API : https://registry.npi.io/write/api/ip/consent-form (See example request body)
-* Database Management: https://registry.npi.io/console (username password)
-* Searchable Read API: https://registry.npi.io/search/api/public/batea/consent-form.json 
-
-
-
-**How to use the searchable API:** 
-
-*(Currently the READ API is public but this can be changed in the djmongo web console.)*
-
-* Use `GET` parameters such as `?param1=value1&param2%value2` to search through results. 
-* Use dot.notion to drill into the docments. 
-* Use parameters `skip` and `limit` will handle pagination. 
-* Use 'include_num_results=1' to include a field `num_results` with the total number of search results. `include_num_reults` can be an expensive operation on large datasets without proper indexes so it is not included by default.). 
-* Change `.json` in the url to `csv` to get csv results instead.
-
 
 Example Request Body (JSON):
 ----------------------------
@@ -85,17 +58,11 @@ Example Request Body (JSON):
 Installation
 ============
 
-Fetch the latest release from github and copy the folder contents to any static webserver.  Currently we are using S3 for this to host http://consent.npi.io for under 5 cents/mo. :-)
+Fetch the latest release from github and copy the folder contents to any static webserver.
 
 
 Changing the POST URL
 =====================
-The current post URL is:
-
-Change the file `app/form.controller.js` near the very bottom look for:
-
-
-      formFactory.submitForm('https://registry.npi.io/write/api/ip/consent-form'...
-
-and change the first parameter of `submitForm`.
+Change the contents of the config.js file to point to your server REST code.
+ 
 
